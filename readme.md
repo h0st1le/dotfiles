@@ -15,7 +15,7 @@ my dotfiles for deployment using [homeshick](https://github.com/andsens/homeshic
 
 Install zsh, vim and git
 
-    sudo apt-get install zsh vim vim-gnome git
+    sudo apt-get install zsh vim git
 
 Set zsh as the default shell
 

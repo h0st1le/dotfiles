@@ -45,6 +45,42 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-
 fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+SSH_ENV="$HOME/.ssh/environment"
+
+function start_agent {
+    echo "Initialising new SSH agent..."
+    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+    echo succeeded
+    chmod 600 "${SSH_ENV}"
+    . "${SSH_ENV}" > /dev/null
+    /usr/bin/ssh-add;
+}
+
+# Source SSH settings, if applicable
+if [ -f "${SSH_ENV}" ]; then
+    . "${SSH_ENV}" > /dev/null
+    #ps ${SSH_AGENT_PID} doesn't work under cywgin
+    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+        start_agent;
+    }
+else
+    start_agent;
+fi
+
+#RVM settings
+if [[ -s ~/.rvm/scripts/rvm ]] ; then
+  RPS1='%{$fg[green]%}[`~/.rvm/bin/rvm-prompt`]%{$reset_color%} $EPS1'
+else
+  if which rbenv &> /dev/null; then
+    RPS1='%{$fg[green]%}[`rbenv version | sed -e "s/ (set.*$//"`]%{$reset_color%} $EPS1'
+  else
+    RPS1='$EPS1'
+  fi
+fi
+
+
+

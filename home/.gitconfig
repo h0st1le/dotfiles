@@ -3,12 +3,5 @@
 	email = jpenka@gmail.com
 [push]
 	default = simple
-[giggle]
-	main-window-maximized = false
-	main-window-geometry = 1000x850+86+70
-	history-view-vpane-position = 398
-	main-window-view = HistoryView
-	file-view-vpane-position = 770
-	show-graph = true
 [color]
 	ui = true

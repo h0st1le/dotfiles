@@ -61,7 +61,7 @@ Bundle 'jeffkreeftmeijer/vim-numbertoggle.git'
 Bundle 'mbadran/headlights'
 Bundle 'mileszs/ack.vim.git'
 Bundle 'skammer/vim-css-color.git'
-Bundle 'bling/vim-airline.git'
+Bundle 'itchyny/lightline.vim'
 " vim-scripts repos on github
 Bundle 'wombat256.vim'
 Bundle 'python.vim'
@@ -292,3 +292,11 @@ augroup filetype_tab_settings
     autocmd FileType json setlocal sw=2 sts=2 ts=8 et
     autocmd FileType json setlocal foldmethod=syntax
 augroup END
+
+" ===============================================================
+" Desc: Status Line w Lightline (If you dont know now you know)
+" ===============================================================
+
+let g:lightline = {
+    \ 'colorscheme': 'wombat',
+    \ }

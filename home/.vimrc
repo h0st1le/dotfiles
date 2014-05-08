@@ -64,6 +64,7 @@ Bundle 'skammer/vim-css-color.git'
 Bundle 'itchyny/lightline.vim'
 Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'plasticboy/vim-markdown'
+Bundle 'greyblake/vim-preview'
 " vim-scripts repos on github
 Bundle 'wombat256.vim'
 Bundle 'python.vim'
@@ -145,6 +146,9 @@ let g:NumberToggleTrigger="<c-l>"
 
 " highlight word at cursor position
 nnoremap <leader>h *<C-O>
+
+" disable default folding for plasticboy markdown plugin
+let g:vim_markdown_folding_disabled=1
 
 " highlight word at cursor and ack for it
 nnoremap <leader>H *<C-O>:AckFromSearch!<CR>

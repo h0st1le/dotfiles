@@ -62,6 +62,8 @@ Bundle 'mbadran/headlights'
 Bundle 'mileszs/ack.vim.git'
 Bundle 'skammer/vim-css-color.git'
 Bundle 'itchyny/lightline.vim'
+Bundle 'mustache/vim-mustache-handlebars'
+Bundle 'plasticboy/vim-markdown'
 " vim-scripts repos on github
 Bundle 'wombat256.vim'
 Bundle 'python.vim'

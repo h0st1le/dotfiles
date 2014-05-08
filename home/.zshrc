@@ -7,6 +7,7 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="candy"
 
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -40,13 +41,14 @@ ZSH_THEME="candy"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git heroku)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 SSH_ENV="$HOME/.ssh/environment"
@@ -72,15 +74,15 @@ else
 fi
 
 #RVM settings
-if [[ -s ~/.rvm/scripts/rvm ]] ; then
-  RPS1='%{$fg[green]%}[`~/.rvm/bin/rvm-prompt`]%{$reset_color%} $EPS1'
-else
-  if which rbenv &> /dev/null; then
-    RPS1='%{$fg[green]%}[`rbenv version | sed -e "s/ (set.*$//"`]%{$reset_color%} $EPS1'
-  else
-    RPS1='$EPS1'
-  fi
-fi
+#if [[ -s ~/.rvm/scripts/rvm ]] ; then
+#  RPS1='%{$fg[green]%}[`~/.rvm/bin/rvm-prompt`]%{$reset_color%} $EPS1'
+#else
+#  if which rbenv &> /dev/null; then
+#    RPS1='%{$fg[green]%}[`rbenv version | sed -e "s/ (set.*$//"`]%{$reset_color%} $EPS1'
+#  else
+#    RPS1='$EPS1'
+#  fi
+#fi
 
 
 

@@ -49,7 +49,7 @@ source $ZSH/oh-my-zsh.sh
 fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 SSH_ENV="$HOME/.ssh/environment"
 
@@ -84,5 +84,8 @@ fi
 #  fi
 #fi
 
+# NVM added to path
+export PATH=$HOME/local/bin:$PATH
 
-
+export NVM_DIR="/home/jpenka/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

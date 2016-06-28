@@ -65,6 +65,8 @@ Bundle 'itchyny/lightline.vim'
 Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'greyblake/vim-preview'
+Bundle 'leafgarland/typescript-vim'
+Bundle 'elzr/vim-json'
 " vim-scripts repos on github
 Bundle 'wombat256.vim'
 Bundle 'python.vim'
@@ -96,6 +98,9 @@ autocmd BufRead,BufNewFile *.scad set filetype=openscad
 " ===============================================================
 " Desc: Remaps and Custom Commands (Momma didnt raise no fool)
 " ===============================================================
+
+" disable syntax concealing
+" let g:vim_json_syntax_conceal = 0
 
 " use sane regexes
 nnoremap / /\v

@@ -1,4 +1,4 @@
-# Path to your oh-my-zsh configuration.
+# Path to oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
@@ -51,8 +51,6 @@ source $ZSH/oh-my-zsh.sh
 fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
-# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 SSH_ENV="$HOME/.ssh/environment"
 
 # Start a new SSH agent
@@ -75,6 +73,9 @@ if [ -f "${SSH_ENV}" ]; then
 else
     start_agent;
 fi
+
+# RVM added to path
+# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # RVM settings
 #if [[ -s ~/.rvm/scripts/rvm ]] ; then

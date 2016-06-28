@@ -7,6 +7,8 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="candy"
 
+# thefuck alias, for correcting previous console commands
+alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -53,6 +55,7 @@ source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
 SSH_ENV="$HOME/.ssh/environment"
 
+# Start a new SSH agent
 function start_agent {
     echo "Initialising new SSH agent..."
     /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
@@ -65,7 +68,7 @@ function start_agent {
 # Source SSH settings, if applicable
 if [ -f "${SSH_ENV}" ]; then
     . "${SSH_ENV}" > /dev/null
-    #ps ${SSH_AGENT_PID} doesn't work under cywgin
+    #ps ${SSH_AGENT_PID} doesn't work under cywgin #
     ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
         start_agent;
     }
@@ -73,7 +76,7 @@ else
     start_agent;
 fi
 
-#RVM settings
+# RVM settings
 #if [[ -s ~/.rvm/scripts/rvm ]] ; then
 #  RPS1='%{$fg[green]%}[`~/.rvm/bin/rvm-prompt`]%{$reset_color%} $EPS1'
 #else
@@ -89,3 +92,15 @@ export PATH=$HOME/local/bin:$PATH
 
 export NVM_DIR="/home/jpenka/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# APM SITL development added to path
+export PATH=$PATH:$HOME/Workspace/Drone/jsbsim/src
+export PATH=$PATH:$HOME/Workspace/Drone/ardupilot/Tools/autotest
+export PATH=/usr/lib/ccache:$PATH
+
+# Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# android sdk development
+export PATH=$PATH:$HOME/Android/Sdk/tools
+export PATH=$PATH:$HOME/Android/Sdk/platform-tools
